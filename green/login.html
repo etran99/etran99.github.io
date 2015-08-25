@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<!--
+	Scalar by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+-->
+<html>
+	<head>
+		<title>Motivation Station - Log In</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="shortcut icon" href="images/checkcircle.png" />
+
+
+<!-- Parse stuff -->
+		<!-- <meta charset="UTF-8">
+	   	<title>Example JS App!</title>
+	  	<meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	  	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+	    <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+	    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	    <script src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
+<!-- 	   end of Parse stuff -->
+
+
+
+	</head>
+	<body>
+
+
+
+
+
+		<!-- Header -->
+			<header id="header">
+				<div class="container">
+					<h1><a href="index.html" class="icon fa-check-circle-o">Motivation Station</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="homepage.html">Home</a></li>
+							<li><a href="about.html">About Us</a></li>
+							<li><a href="signup.html">Sign Up</a></li>
+							<li class="current"><a href="login.html">Log In</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Main-->
+					<div id="main" class="wrapper style3">
+						<div class="container 75%">
+						<section id="content">
+						<section id="four" class="wrapper style4 special">
+								<h2>Log In</h2>
+								<div class="row 200%">
+								<div class="12u$">
+									<blockquote class="testimonial">
+										<cite>
+											<span class="image style2"><img src="images/avatar.png" alt="" /></span>
+												<div class="row uniform 50%">
+													<div class="4u"></div>
+													<div class="4u">
+														<div data-role="main" class="ui-content">
+													       <div>
+													           <input id="username" type="text" placeholder="Username">
+													        </div>
+													    </div>
+													</div>
+												</div>
+												<div class="row uniform 50%">
+													<div class="4u"></div>
+													<div class="4u">
+														<div data-role="main" class="ui-content">
+													       <div>
+													           <input id="password" type="password" placeholder="Password">
+													        </div>
+													    </div>
+													</div>
+												</div>
+												<div>
+													<button id="loginButton">Log In</button>
+												</div>
+										</cite>
+									</blockquote>
+								</div>
+								</div>
+						</section>
+						</section>
+						</div>
+					</div>
+			</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="major-icons">
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<p class="copyright">&copy; Motivation Station. All rights reserved.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+
+
+
+<!-- 			Parse stuff -->
+
+			<script>
+			   //This line identifies you and to what application on Parse the data will be transmitted to and from, PUT YOUR OWN KEYS HERE
+			   Parse.initialize("VI0h3nfcAKbIyBZv8NAZp0FUZ2HNhlCLmXYjP6dC", "DYYYhL6rV6BBPwINUBiiuIgbc7hnLN3mYWEDtjWY");
+
+
+			   //Code for logging in an existing user
+			   $("#loginButton").on("click", function (e) {
+			       console.log("logging in");
+
+			       var usernameTxtBox = $("#username");
+			       var passwordTxtBox = $("#password");
+
+			       Parse.User.logIn(usernameTxtBox.val(), passwordTxtBox.val(), {
+			           success: function (user) {
+			               // Hooray! Do stuff after successful login.
+			               window.location = "userhome.html";
+			           },
+			           error: function (user, error) {
+			               // The login failed. Check error to see why.
+			               alert("Error: " + error.code + " " + error.message);
+			           }
+			       });
+			   });
+			</script>
+
+
+<!-- 			end of Parse Stuff -->
+
+
+
+
+
+
+
+
+
+
+
+	</body>
+</html>
